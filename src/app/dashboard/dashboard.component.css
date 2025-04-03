@@ -1,0 +1,32 @@
+
+.profileimg{
+    width: 100px;
+    height: 100px;
+}
+.custom-toggle-img{
+    width: 50px;
+    height: 50px;
+}
+.side-bar{
+    width: 290px;
+}
+.accordion-item{
+    width: 290px;
+}
+.bodycolor{
+    background-color: aliceblue;
+}
+.btn-dark{
+    border-radius: 60px;
+}
+.profile-box {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+  }
+  

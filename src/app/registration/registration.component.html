@@ -1,4 +1,4 @@
-<div class="registration-container">
+<div class="registration-container mt-5">
     <h2>Sign-Up</h2>
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -24,16 +24,20 @@
       </div>
   
       <button type="submit" [disabled]="signUpForm.invalid" class="btn btn-primary">Sign Up</button>
+      <div class="d-flex justify-content-center mt-3">
+        <a routerLink="/login">Already have an Account</a>
+      </div>
+      
     </form>
   </div>
 
   
-@for(user of user; track user.username){
+<!-- @for(user of user; track user.username){
     <ul>
         <li>{{user.username}}</li>
         <li>{{user.password}}</li>
         <li>{{user.email}}</li>
        
     </ul>
-}
+} -->
   

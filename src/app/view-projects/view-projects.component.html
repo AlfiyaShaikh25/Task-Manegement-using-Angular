@@ -1,0 +1,146 @@
+
+<!-- <ul>
+    <li *ngFor="let project of projects">
+
+        
+      <strong>{{ project.title }}</strong> - {{ project.projectManager }}
+      
+    </li>
+  </ul> -->
+
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+       
+        <th scope="col">Title</th>
+        <th scope="col">CreatedBy</th>
+        <th scope="col">Project Manager</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects; let i = index">
+        
+        <td>{{ project.title }}</td>
+        <td>{{ project.createdBy}}</td>
+        <td>{{ project.projectManager}}</td>
+        <td>{{project.startDate}}</td>
+        <td>{{project.endDate}}</td>
+       
+        <td>{{project.dueDate}}</td>
+       
+        <td>
+            
+            <button type="button" class="btn btn-secondary" (click)="openTaskForm(i)">Add Task</button>
+            
+          </td>
+
+          <td>
+            
+            <button type="button" class="btn btn-secondary"  [routerLink]="['/tasks',project.title]" >
+                View Task</button>
+            
+          </td>
+      </tr>
+     
+    </tbody>
+  </table>
+  <!-- <h2>📋 Project List</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Project Manager</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Team Members</th>
+      <th>Due Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects; let i = index">
+      <td>{{ project.title }}</td>
+      <td>{{ project.projectManager }}</td>
+      <td>{{ project.startDate }}</td>
+      <td>{{ project.endDate }}</td>
+      <td>{{ project.teamMembers }}</td>
+      <td>{{ project.dueDate }}</td>
+      <td>
+        <button (click)="deleteProject(i)">🗑️ Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+<!-- <div *ngIf="showTaskForm">
+    <h3>Add Task</h3>
+    <label>Title: <input [(ngModel)]="newTask.title"></label><br>
+    <label>Assigned To: <input [(ngModel)]="newTask.assignedTo"></label><br>
+    <label>Status: 
+      <select [(ngModel)]="newTask.status">
+        <option>High</option>
+        <option selected>Medium</option>
+        <option>Low</option>
+      </select>
+    </label><br>
+    <label>Assigned User: <input [(ngModel)]="newTask.assignedUser"></label><br>
+    <label>Estimate: <input [(ngModel)]="newTask.estimate"></label><br>
+    <label>Time Spent: <input [(ngModel)]="newTask.timeSpent"></label><br>
+    <button (click)="addTask()">✅ Save Task</button>
+    <button (click)="showTaskForm = false">❌ Cancel</button>
+  </div> -->
+
+  <!-- Task Form Modal -->
+<div id="taskModal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Task</h5>
+          <button type="button" class="btn-close" (click)="closeTaskForm()"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Task Title</label>
+              <input type="text" class="form-control" [(ngModel)]="newTask.title" name="title">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Assigned To</label>
+              <input type="text" class="form-control" [(ngModel)]="newTask.assignedTo" name="assignedTo">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Status</label>
+              <select class="form-select" [(ngModel)]="newTask.status" name="status">
+                <option value="High">Pending</option>
+                <option value="Medium">In Progress</option>
+                <option value="Low">Completed</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Assigned User</label>
+              <input type="text" class="form-control" [(ngModel)]="newTask.assignedUser" name="assignedUser">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Estimate</label>
+              <input type="text" class="form-control" [(ngModel)]="newTask.estimate" name="estimate">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Time Spent</label>
+              <input type="text" class="form-control" [(ngModel)]="newTask.timeSpent"  name="timeSpent">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeTaskForm()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addTask()">Add Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

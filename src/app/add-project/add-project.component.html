@@ -1,0 +1,65 @@
+<div class="container mt-4">
+    <h2>Add New Project</h2>
+  
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <!-- Title -->
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" formControlName="title">
+      </div>
+  
+      <!-- Description -->
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" formControlName="description"></textarea>
+      </div>
+  
+      <!-- Created By -->
+      <div class="mb-3">
+        <label class="form-label">Created By</label>
+        <input type="text" class="form-control" formControlName="createdBy">
+      </div>
+  
+      <!-- Project Manager -->
+      <div class="mb-3">
+        <label class="form-label">Project Manager</label>
+        <input type="text" class="form-control" formControlName="projectManager">
+      </div>
+  
+      <!-- Start Date -->
+      <div class="mb-3">
+        <label class="form-label">Start Date</label>
+        <input type="date" class="form-control" formControlName="startDate">
+      </div>
+  
+      <!-- End Date -->
+      <div class="mb-3">
+        <label class="form-label">End Date</label>
+        <input type="date" class="form-control" formControlName="endDate">
+      </div>
+  
+      <!-- Team Members -->
+      <div class="mb-3">
+        <label class="form-label">Team Members</label>
+        <input type="text" class="form-control" formControlName="teamMembers">
+      </div>
+  
+      <!-- Due Date -->
+      <div class="mb-3">
+        <label class="form-label">Due Date</label>
+        <input type="date" class="form-control" formControlName="dueDate">
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Create Project</button>
+    </form>
+  </div>
+  
+
+  <h3>Saved Projects</h3>
+  <ul>
+    <li *ngFor="let project of projects">
+      <strong>{{ project.title }}</strong> - {{ project.projectManager }}
+      
+    </li>
+  </ul>

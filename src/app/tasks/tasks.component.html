@@ -1,0 +1,36 @@
+
+>
+
+
+<table class="table">
+    <thead>
+      <tr>
+       
+        <th scope="col">Title</th>
+        <th scope="col">Assigned To</th>
+        <th scope="col">Status</th>
+        <th scope="col">Estimate</th>
+        <th scope="col">Time Spent</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        
+        <td>{{ task.title }}</td>
+        <td>{{ task.assignedTo }}</td>
+        <td>{{ task.status }}</td>
+        <td>{{ task.estimate }}</td>
+        <td>{{ task.timeSpent }}</td>
+
+        <td><button type="button" class="btn btn-primary">Edit</button></td>
+        <td><button type="button" class="btn btn-danger">Delete</button></td>
+       
+       
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+  

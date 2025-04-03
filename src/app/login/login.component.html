@@ -1,6 +1,15 @@
 
-<div class="login-container">
+
+
+<!-- <img class="loginimg" src="assets/login.png">  -->
+
+
+<div class="login-container mt-5">
+ 
     <h2>Login</h2>
+    <div class="d-flex justify-content-center">
+      <img class="loginimg rounded-circle mt-2" src="assets/profile.jpg">
+    </div>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="username">Username</label>
@@ -19,6 +28,10 @@
       </div>
   
       <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+
+      <div class="d-flex justify-content-center mt-3">
+        <a routerLink="/registration">New User? Sign Up</a>
+      </div>
     </form>
   </div>
-  
+ 

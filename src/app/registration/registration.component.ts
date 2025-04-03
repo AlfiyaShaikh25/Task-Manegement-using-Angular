@@ -1,14 +1,14 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../service/user.service';
 import { UserInterface } from '../interfaces/User';
 
 
 @Component({
   selector: 'app-registration',
-  imports: [NgIf,ReactiveFormsModule],
+  imports: [NgIf,ReactiveFormsModule,RouterLink],
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.css'
 })
