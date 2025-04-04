@@ -1,0 +1,7 @@
+.navbar{
+    background-color: #ddf0fac9 !important;
+    cursor: pointer;
+  }
+  .navbar :hover{
+    color: blue;
+  }

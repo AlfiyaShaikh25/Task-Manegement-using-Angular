@@ -22,9 +22,9 @@
 
 
             <!-- Logo Section -->
-            <div class="div-logo-img  ">
-                <img class="rounded-circle" src="assets/wailogo.png" alt="logo-image"
-                    style="margin: 13px 120px 0px 10px; width: 140px; height: 54.13px;">
+            <div class="div-logo-img   ">
+                <img class="rounded-circle mt-2 mb-2" src="assets/wai-logo.png" alt="logo-image"
+                    style="margin: 13px 120px 0px 10px; width: 54.13px; height: 54.13px;">
             </div>
 
             <!-- Navbar Toggle Button for Mobile View -->
@@ -54,23 +54,25 @@
                 </button>
               </div>
             <!-- Offcanvas Navbar for Small and Medium Screens -->
-            <div class="offcanvas offcanvas-top d-lg-none d" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
+            <div class="offcanvas offcanvas-top d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel" style="height: 100px !important; "> <!-- Set your preferred height -->
+       
+         <div class="offcanvas-body d-flex align-items-center justify-content-center p-0">
+           <ul class="navbar-nav d-flex flex-row justify-content-center gap-4">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLink="/add-project">Add Projects</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLink="/view-projects">View Projects</a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       
 
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body ">
-                    <div class="navbar-nav me-auto">
-                        <div class="nav-title">
-                            <h3 id="paragraph" class="mb-0">Task Manegement</h3>
-                            
-                        </div>
-                    </div>
-
-                  
-                </div>
-            </div>
         </div>
       </nav>
 
@@ -94,4 +96,31 @@
     <!-- Logout Button -->
     <button class="btn btn-danger btn-sm mt-2" routerLink="/login">Logout</button>
   </div>
+</div>
+
+<h1 class="username">👋WellCome {{userName}}!</h1>
+
+<div class="d-flex">
+
+<div class="container mt-5 pt-5 d-flex justify-content-center"> 
+  <div class="card hover-card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/add-project.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title d-flex justify-content-center">Create Project</h5>
+      <p class="card-text">Manage tasks, collaborate with your team, and track progress efficiently.</p>
+      <a href="#" class="btn btn-primary d-flex justify-content-center" routerLink="/add-project">Add Project</a>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 pt-5"> 
+  <div class="card hover-card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/view-project.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title d-flex justify-content-center">View Project</h5>
+      <p class="card-text">Check project details, track progress, and manage tasks effectively</p>
+      <a href="#" class="btn btn-primary d-flex justify-content-center" routerLink="/view-projects">View Project</a>
+    </div>
+  </div>
+</div>
 </div>

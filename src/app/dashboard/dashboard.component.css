@@ -30,3 +30,24 @@
     width: 200px;
   }
   
+  .card{
+    margin-top: 5%;
+ 
+        box-shadow: 0 10px 15px rgba(4, 119, 185, 0.432);
+      
+  }
+  
+  .hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .navbar{
+    background-color: #ddf0fac9 !important;
+  }
+  .username{
+    padding-top: 100px;
+  }

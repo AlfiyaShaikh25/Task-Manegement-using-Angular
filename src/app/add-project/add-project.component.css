@@ -1,0 +1,17 @@
+nav{
+    background-color: rgba(185, 225, 252, 0.712) !important;
+    border-radius: 5px;
+   
+}
+
+.container{
+    background-color:  rgba(162, 190, 252, 0.226) ;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin-top: 100px !important;
+    box-shadow: 0 10px 15px rgba(4, 119, 185, 0.432) !important;
+}
+.form-label{
+  font-weight: 500;
+}

@@ -1,65 +1,89 @@
-<div class="container mt-4">
-    <h2>Add New Project</h2>
+
+<app-nav-bar></app-nav-bar>
+
+
+<div class="container mt-4 shadow-sm " >
+
   
     <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
       <!-- Title -->
       <div class="mb-3">
         <label class="form-label">Title</label>
         <input type="text" class="form-control" formControlName="title">
+        <div *ngIf="projectForm.get('title')?.invalid && (projectForm.get('title')?.touched || submitted)">
+          <small class="text-danger">Title is required</small>
+        </div>
       </div>
   
       <!-- Description -->
       <div class="mb-3">
         <label class="form-label">Description</label>
         <textarea class="form-control" formControlName="description"></textarea>
+        <div *ngIf="projectForm.get('description')?.invalid && (projectForm.get('description')?.touched || submitted)">
+          <small class="text-danger">Description is required</small>
+        </div>
       </div>
   
       <!-- Created By -->
       <div class="mb-3">
         <label class="form-label">Created By</label>
         <input type="text" class="form-control" formControlName="createdBy">
+        <div *ngIf="projectForm.get('createdBy')?.invalid && (projectForm.get('createdBy')?.touched || submitted)">
+          <small class="text-danger">CreatedBy is required</small>
+        </div>
       </div>
   
       <!-- Project Manager -->
       <div class="mb-3">
         <label class="form-label">Project Manager</label>
         <input type="text" class="form-control" formControlName="projectManager">
+        <div *ngIf="projectForm.get('projectManager')?.invalid && (projectForm.get('projectManager')?.touched || submitted)">
+          <small class="text-danger">ProjectManager is required</small>
+        </div>
       </div>
   
       <!-- Start Date -->
       <div class="mb-3">
         <label class="form-label">Start Date</label>
         <input type="date" class="form-control" formControlName="startDate">
+        <div *ngIf="projectForm.get('startDate')?.invalid && (projectForm.get('startDate')?.touched || submitted)">
+          <small class="text-danger">StartDate is required</small>
+        </div>
       </div>
   
       <!-- End Date -->
       <div class="mb-3">
         <label class="form-label">End Date</label>
         <input type="date" class="form-control" formControlName="endDate">
+        <div *ngIf="projectForm.get('endDate')?.invalid && (projectForm.get('endDate')?.touched || submitted)">
+          <small class="text-danger">EndDate is required</small>
+        </div>
       </div>
   
       <!-- Team Members -->
       <div class="mb-3">
         <label class="form-label">Team Members</label>
         <input type="text" class="form-control" formControlName="teamMembers">
+        <div *ngIf="projectForm.get('teamMembers')?.invalid && (projectForm.get('teamMembers')?.touched || submitted)">
+          <small class="text-danger">EndDate is required</small>
+        </div>
       </div>
   
       <!-- Due Date -->
       <div class="mb-3">
         <label class="form-label">Due Date</label>
         <input type="date" class="form-control" formControlName="dueDate">
+        <div *ngIf="projectForm.get('dueDate')?.invalid && (projectForm.get('dueDate')?.touched || submitted)">
+          <small class="text-danger">DueDate is required</small>
+        </div>
       </div>
   
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary">Create Project</button>
+       <div class="d-flex justify-content-center mb-5">
+        <button type="submit" class="btn btn-primary mb-5  mt-2" >Create Project</button>
+       </div>
+     
     </form>
   </div>
   
 
-  <h3>Saved Projects</h3>
-  <ul>
-    <li *ngFor="let project of projects">
-      <strong>{{ project.title }}</strong> - {{ project.projectManager }}
-      
-    </li>
-  </ul>

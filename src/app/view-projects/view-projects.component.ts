@@ -2,10 +2,11 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { NavBarComponent } from "../nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-view-projects',
-  imports: [NgFor,NgIf,FormsModule,RouterLink],
+  imports: [NgFor, NgIf, FormsModule, RouterLink, NavBarComponent],
   templateUrl: './view-projects.component.html',
   styleUrl: './view-projects.component.css'
 })
@@ -22,7 +23,9 @@ export class ViewProjectsComponent {
     timeSpent: ''
   };
 
-  constructor() {}
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
     this.loadProjects();
@@ -39,7 +42,7 @@ export class ViewProjectsComponent {
 
   openTaskForm(index: number) {
     this.selectedProjectIndex = index; // Set selected project index
-    this.newTask = { title: '', assignedTo: '', status: 'Medium', assignedUser: '', estimate: '', timeSpent: '' };
+    this.newTask = { title: '', assignedTo: '', status: 'In Progress', assignedUser: '', estimate: '', timeSpent: '' };
   
     // Open Bootstrap modal with smooth effect
     const modal = document.getElementById('taskModal');
@@ -51,6 +54,7 @@ export class ViewProjectsComponent {
   }
 
   addTask() {
+   
     if (this.selectedProjectIndex !== null) {
       // Get the project
       let project = this.projects[this.selectedProjectIndex];
@@ -67,7 +71,7 @@ export class ViewProjectsComponent {
       localStorage.setItem('projects', JSON.stringify(this.projects));
   
       // Reset task form fields
-      this.newTask = { title: '', assignedTo: '', status: 'Medium', assignedUser: '', estimate: '', timeSpent: '' };
+      this.newTask = { title: '', assignedTo: '', status: 'In Progress', assignedUser: '', estimate: '', timeSpent: '' };
   
       // Close the modal
       this.closeTaskForm();
